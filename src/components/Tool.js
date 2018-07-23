@@ -7,7 +7,9 @@ class Tool extends Component {
             id: PropTypes.string.isRequared,
             name: PropTypes.string.isRequared,
             type: PropTypes.string.isRequared,
-            location: PropTypes.string.isRequared
+            location: PropTypes.string.isRequared,
+        
+        history: PropTypes.object.isRequired
         })
     }
 
@@ -25,8 +27,10 @@ class Tool extends Component {
         )
     }
 
-    handleUpdateTool = (ev) => {
-        console.log('---', 'redirectToUpdate')
+    handleUpdateTool = () => {
+        console.log('---', 'redirectToUpdate');
+        const { history } = this.props
+        history.push(':{tool.id}')
     }
 }
 
