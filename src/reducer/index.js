@@ -1,6 +1,8 @@
-import {combineReducers} from 'redux'
-import tools from './tools'
+import { combineReducers } from 'redux'
+import toolsReducer from './toolsReducer'
+import formReducer from './formReducer'
 
 export default combineReducers ({
-    tools
+    toolsReducer,
+    formReducer
 })

@@ -1,21 +1,21 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Switch, HashRouter, Route } from 'react-router-dom'
-import App from './App'
-import AddTool from './components/AddTool'
-import UpdateTool from './components/UpdateTool'
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import store from './store'
+
+import { ToolListContainer, AddToolContainer, UpdateToolContainer } from './containers'
 
 function Root() {
     return (
         <Provider store = { store }>
-            <HashRouter>
+            <Router>
                 <Switch>
-                    <Route path="/" component={App} />
-                    <Route path="/new" component={AddTool} />
-                    <Route path="/:id" component={UpdateTool} />
+                    <Route exact path="/" component={ToolListContainer} />
+                    <Route exact path="/new" component={AddToolContainer} />
+                    <Route path="/:id" component={UpdateToolContainer} />
+                    <Route component={ToolListContainer} />
                 </Switch>
-            </HashRouter>
+            </Router>
         </Provider>
     )
 }
