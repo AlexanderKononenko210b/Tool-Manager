@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { Headers } from '../constants'
-import { changeCurrentPage } from '../actions'
-import { ToolListComponent } from '../components';
-import PagingListContainer from './PagingListContainer';
+import { Headers } from '../../../shared/constants'
+import { ToolListComponent } from '../index'
+import { PagingListContainer } from '../index'
 
 
 class ToolList extends Component {
@@ -26,9 +24,6 @@ class ToolList extends Component {
         const {tools, currentPage, countToolsOnPage} = this.props
         const page = currentPage - 1
         const toolsPaging = this.getToolsOnPage(page, tools, countToolsOnPage)
-        console.log(currentPage)
-        console.log(tools)
-        console.log(toolsPaging)
         return (
             <div>
                 <ToolListComponent 

@@ -3,7 +3,9 @@ import { Provider } from 'react-redux'
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import store from './store'
 
-import { ToolListContainer, AddToolContainer, UpdateToolContainer } from './containers'
+import { ToolListContainer } from '../features/tool-search/tool-list'
+import { AddToolContainer } from '../features/tool-search/tool-add'
+import { UpdateToolContainer } from '../features/tool-search/tool-edit'
 
 function Root() {
     return (

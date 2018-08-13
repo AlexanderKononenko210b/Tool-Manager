@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { AddUpdateFormComponent } from '../components'
-import { changeName, changeType, changeLocation } from '../actions'
+import { AddUpdateFormComponent } from './index'
+import { changeName, changeType, changeLocation } from './index'
 
 class AddUpdateFormContainer extends Component {
 

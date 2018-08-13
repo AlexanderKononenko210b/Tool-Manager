@@ -1,5 +1,4 @@
-import { Actions } from '../constants'
-import { Types, Locations } from '../constants'
+import { Actions, Types, Locations } from '../../shared/constants'
 
 const initState = {
     tools: [

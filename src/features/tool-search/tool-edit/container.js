@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { Headers } from '../constants'
-import { changeName, changeType, changeLocation, updateTool } from '../actions'
-import { AddUpdateFormContainer } from '../containers'
+import { AddUpdateFormContainer } from '../shared'
+import { Headers } from '../../shared/constants'
+import { updateTool } from './index'
+import { changeName, changeType, changeLocation } from '../shared'
 
 class UpdateToolContainer extends Component {
     static propTypes = {

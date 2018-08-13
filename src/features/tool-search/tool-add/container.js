@@ -3,14 +3,16 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
-import { AddUpdateFormContainer } from '../containers'
-import { Headers } from '../constants'
-import { changeName, changeType, changeLocation, addTool } from '../actions'
+import { AddUpdateFormContainer } from '../shared'
+import { Headers } from '../../shared/constants'
+import { addTool } from './index'
+import { changeName, changeType, changeLocation } from '../shared'
 
 class AddToolContainer extends Component {
 
     constructor(props) {
         super(props)
+        console.log('AddToolContainer work')
         this.handleSave = this.handleSave.bind(this)
         this.handleCancel = this.handleCancel.bind(this)
     }
@@ -42,6 +44,7 @@ class AddToolContainer extends Component {
     }
 
     render () {
+        console.log(this.handleSave, this.handleCancel)
         return (
             <div>
                 <h2>{Headers.ADD_FORM}</h2>

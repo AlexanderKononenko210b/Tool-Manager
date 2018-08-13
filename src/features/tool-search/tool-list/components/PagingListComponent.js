@@ -17,7 +17,7 @@ const  PagingListComponent = (props) => {
 }
 
 PagingListComponent.propTypes = {
-    currentPage: PropTypes.string.isRequired,
+    currentPage: PropTypes.number.isRequired,
     handleNextPage: PropTypes.func.isRequired,
     handlePrevPage: PropTypes.func.isRequired
 }

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { changeCurrentPage } from '../actions'
-import { PagingListComponent } from '../components'
+import { changeCurrentPage } from '../index'
+import { PagingListComponent } from '../index'
 
 class PagingListContainer extends Component {
 
@@ -43,8 +43,7 @@ class PagingListContainer extends Component {
     }
 
     render() {
-        const { currentPage, handleNextPage, handlePrevPage } = this.props
-        console.log( currentPage, handleNextPage, handlePrevPage )
+        const { currentPage } = this.props
         return (
             <PagingListComponent 
                 currentPage = { currentPage }

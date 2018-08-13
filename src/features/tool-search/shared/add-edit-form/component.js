@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Types} from '../constants'
-import {Locations} from '../constants'
+import {Types, Locations} from '../../../shared/constants'
 
 const AddUpdateFormComponent = (props) => {
     const { name, typeTool, location } = props

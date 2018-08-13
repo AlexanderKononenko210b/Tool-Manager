@@ -1,4 +1,4 @@
-import { Actions } from '../constants'
+import { Actions } from '../../shared/constants'
 
 const initState = {
     name: '',
@@ -26,4 +26,3 @@ const formReducer = (state = initState, action) => {
     }
 }
 export default formReducer
-
