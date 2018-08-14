@@ -1,12 +1,14 @@
 import React from 'react'
 import ToolComponent from './ToolComponent'
 import PropTypes from 'prop-types'
+import Table from 'react-bootstrap/lib/Table'
+import '../../../../core/style.css'
 
 const ToolTable = (props) => {
     const { tools, handleUpdateTool} = props
     return (
-        <div>
-            <table>
+        <div className = "div_table">
+            <Table striped bordered condensed hover id = "table_list">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -26,7 +28,7 @@ const ToolTable = (props) => {
                         })
                     }
                 </tbody>
-            </table>
+            </Table>
         </div>
     )
 }

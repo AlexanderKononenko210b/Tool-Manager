@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import ToolTableComponent from './ToolTableComponent'
+import { Button, PageHeader } from 'react-bootstrap/lib'
 
 const ToolListComponent = (props) => {
     const { tools, header } = props
     const { handleAddTool, handleUpdateTool } = props
     return (
-        <div>
-            <h2>{header}</h2>
-            <button
+        <div className = "list_page">
+            <PageHeader>{header}</PageHeader>
+            <Button bsStyle="primary" id = "button"
                 onClick = {handleAddTool}>
                 + Add
-            </button>
+            </Button>
             <ToolTableComponent tools = {tools} handleUpdateTool = {handleUpdateTool} />
         </div>
     )

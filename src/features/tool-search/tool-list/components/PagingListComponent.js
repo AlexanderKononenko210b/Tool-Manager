@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import Button from 'react-bootstrap/lib/Button'
+import Badge from 'react-bootstrap/lib/Badge'
 
 const  PagingListComponent = (props) => {
     const { currentPage, handleNextPage, handlePrevPage } = props
     return (
         <div>
-            <button onClick = {handlePrevPage}>
+            <Button onClick = {handlePrevPage} bsStyle="primary">
                 prev
-            </button>
-            <label>{currentPage}</label>
-            <button onClick = {handleNextPage}>
+            </Button>
+            <Badge>{currentPage}</Badge>
+            <Button onClick = {handleNextPage} bsStyle="primary">
                 next
-            </button>
+            </Button>
         </div>
     );
 }
