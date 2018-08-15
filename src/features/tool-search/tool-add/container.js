@@ -12,7 +12,6 @@ class AddToolContainer extends Component {
 
     constructor(props) {
         super(props)
-        console.log('AddToolContainer work')
         this.handleSave = this.handleSave.bind(this)
         this.handleCancel = this.handleCancel.bind(this)
     }
@@ -44,7 +43,6 @@ class AddToolContainer extends Component {
     }
 
     render () {
-        console.log(this.handleSave, this.handleCancel)
         return (
             <div>
                 <h2>{Headers.ADD_FORM}</h2>

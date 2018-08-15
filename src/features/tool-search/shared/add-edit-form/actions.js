@@ -20,3 +20,10 @@ export const changeLocation = (newLocation) => {
         payload: newLocation
     }
 }
+
+export const writeError = (typeField, errorMessage) => {
+    return {
+        type: Actions.WRITE_ERROR,
+        payload: { typeField, errorMessage }
+    }
+}
