@@ -1,5 +1,1 @@
-import AddToolContainer from './container'
-
-export { 
-    AddToolContainer 
-}
+export { default as AddToolContainer } from './container'

@@ -6,8 +6,8 @@ import { ElementNames } from './ElementNames'
 
 export {
     Actions,
-    ElementNames, 
-    Headers, 
-    Locations, 
-    Types
+    Headers,
+    Locations,
+    Types,
+    ElementNames
 }

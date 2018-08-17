@@ -1,7 +1,2 @@
-import ToolListContainer from './container'
-import toolsReducer from './reducer'
-
-export { 
-    ToolListContainer, 
-    toolsReducer 
-}
+export { default as ToolListContainer } from './container'
+export { default as toolsReducer } from './reducer'

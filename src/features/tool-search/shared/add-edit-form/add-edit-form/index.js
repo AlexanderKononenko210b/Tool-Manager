@@ -1,11 +1,3 @@
-import formReducer from './reducer'
-import AddUpdateFormContainer from './container'
-import { changeName, changeType, changeLocation } from './actions'
-
-export {
-    formReducer,
-    changeName,
-    changeType,
-    changeLocation,
-    AddUpdateFormContainer
-}
+export { default as  formReducer } from './reducer'
+export { default as AddUpdateFormContainer } from './container'
+export { changeName, changeType, changeLocation } from './actions'

@@ -1,5 +1,1 @@
-import UpdateToolContainer from './container'
-
-export { 
-    UpdateToolContainer 
-}
+export { default as UpdateToolContainer } from './container'
