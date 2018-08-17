@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { AddUpdateFormComponent } from './index'
-import { changeName, changeType, changeLocation, writeError } from './index'
-import { nameValidation, toolTypeValidation, locationValidation } from './index'
+import AddUpdateFormComponent from './component'
+import { changeName, changeType, changeLocation, writeError } from './actions'
+import { nameValidation, toolTypeValidation, locationValidation } from './validation'
 
 class AddUpdateFormContainer extends Component {
 

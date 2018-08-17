@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
-import { AddUpdateFormContainer } from '../shared'
+import { AddUpdateFormContainer } from '../shared/add-edit-form/add-edit-form'
 import { Headers } from '../../shared/constants'
-import { addTool } from './index'
-import { changeName, changeType, changeLocation } from '../shared'
+import { addTool } from './actions'
+import { changeName, changeType, changeLocation } from '../shared/add-edit-form/add-edit-form'
 
 class AddToolContainer extends Component {
 

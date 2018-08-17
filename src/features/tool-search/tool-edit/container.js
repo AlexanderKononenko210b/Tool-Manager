@@ -4,10 +4,10 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { AddUpdateFormContainer } from '../shared'
+import { AddUpdateFormContainer } from '../shared/add-edit-form/add-edit-form'
 import { Headers } from '../../shared/constants'
-import { updateTool } from './index'
-import { changeName, changeType, changeLocation } from '../shared'
+import { updateTool } from './actions'
+import { changeName, changeType, changeLocation } from '../shared/add-edit-form/add-edit-form'
 
 class UpdateToolContainer extends Component {
     static propTypes = {

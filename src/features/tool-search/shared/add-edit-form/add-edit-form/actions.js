@@ -1,4 +1,4 @@
-import { Actions } from '../../../shared'
+import { Actions } from '../../../../shared/constants'
 
 export const changeName = (newName) => {
     return {

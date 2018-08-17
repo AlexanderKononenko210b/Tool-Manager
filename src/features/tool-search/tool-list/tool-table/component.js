@@ -1,7 +1,8 @@
 import React from 'react'
-import ToolComponent from './ToolComponent'
 import PropTypes from 'prop-types'
 import Table from 'react-bootstrap/lib/Table'
+
+import ToolComponent from '../tool'
 import '../../../../core/style.css'
 
 const ToolTable = (props) => {

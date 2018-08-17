@@ -1,4 +1,4 @@
-import { Actions } from '../../shared/constants'
+import { Actions } from '../../../../shared/constants'
 
 const initState = {
     name: '',

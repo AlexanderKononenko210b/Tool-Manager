@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap/lib'
 
-import {Types, Locations} from '../../../shared/constants'
-import { ErrorShowComponent } from '../index'
+import { Types, Locations } from '../../../../shared/constants'
+import ErrorShowComponent from '../error-show'
 
 const AddUpdateFormComponent = (props) => {
     const { name, typeTool, location } = props

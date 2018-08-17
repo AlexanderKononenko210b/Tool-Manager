@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Alert } from 'react-bootstrap/lib'
 
-const ErrorShowComponent = (props) => {
+const ErrorShow = (props) => {
     const { errorMessage } = props
     return (
         <Alert bsStyle= "warning" >
@@ -11,8 +11,8 @@ const ErrorShowComponent = (props) => {
     )
 }
 
-ErrorShowComponent.propTypes = {
+ErrorShow.propTypes = {
     errorMessage: PropTypes.string.isRequired
 }
 
-export default ErrorShowComponent
+export default ErrorShow

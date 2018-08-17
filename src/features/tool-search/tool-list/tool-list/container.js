@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { Headers } from '../../../shared/constants'
-import { ToolListComponent } from '../index'
-import { PagingListContainer } from '../index'
+import ToolListComponent from './component'
+import PagingListContainer from '../paging-list'
 
 
 class ToolList extends Component {

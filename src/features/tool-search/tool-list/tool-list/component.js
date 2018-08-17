@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import ToolTableComponent from './ToolTableComponent'
 import { Button, PageHeader } from 'react-bootstrap/lib'
+
+import ToolTableComponent from '../tool-table'
 
 const ToolListComponent = (props) => {
     const { tools, header } = props

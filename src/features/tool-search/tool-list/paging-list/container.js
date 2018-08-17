@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { changeCurrentPage } from '../index'
-import { PagingListComponent } from '../index'
+import { changeCurrentPage } from './actions'
+import PagingListComponent from './component'
 
 class PagingListContainer extends Component {
 

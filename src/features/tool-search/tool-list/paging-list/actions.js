@@ -1,4 +1,4 @@
-import { Actions } from '../../shared/constants'
+import { Actions } from '../../../shared/constants'
 
 export const changeCurrentPage = (newPage) => {
     return {
