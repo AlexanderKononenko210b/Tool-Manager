@@ -20,7 +20,7 @@ const AddUpdateFormComponent = (props) => {
                     type="text" 
                     placeholder="Name..."
                 />
-                { nameError !== '' ? <ErrorShowComponent errorMessage = {nameError}/> : ''}
+                { nameError ? <ErrorShowComponent errorMessage = {nameError}/> : ''}
             </FormGroup>
             <FormGroup>
                 <ControlLabel>Type:</ControlLabel>
@@ -30,7 +30,7 @@ const AddUpdateFormComponent = (props) => {
                     <option value = {Types.CUT_TYPE}>Cut</option>
                     <option value = {Types.MILL_TYPE}>Mill</option>
                 </FormControl>
-                { typeToolError !== '' ? <ErrorShowComponent errorMessage = {typeToolError}/> : ''}
+                { typeToolError ? <ErrorShowComponent errorMessage = {typeToolError}/> : ''}
             </FormGroup>
             <FormGroup>
                 <ControlLabel>Location:</ControlLabel>
@@ -44,7 +44,7 @@ const AddUpdateFormComponent = (props) => {
                     <option value = {Locations.BOX_B}>Box-B</option>
                     <option value = {Locations.BOX_C}>Box-C</option>
                 </FormControl>
-                { locationError !== '' ? <ErrorShowComponent errorMessage = {locationError}/> : ''}
+                { locationError ? <ErrorShowComponent errorMessage = {locationError}/> : ''}
             </FormGroup>
             <FormGroup>
                 <Button type="submit" bsStyle="primary" disabled={!formValid}>

@@ -2,8 +2,12 @@ import { Actions } from './Actions'
 import { Headers } from './Headers'
 import { Locations } from './Locations'
 import { Types } from './Types'
+import { ElementNames } from './ElementNames'
 
-export {Actions};
-export {Headers};
-export {Locations};
-export {Types};
+export {
+    Actions,
+    ElementNames, 
+    Headers, 
+    Locations, 
+    Types
+}

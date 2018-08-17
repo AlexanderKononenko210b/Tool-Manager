@@ -26,7 +26,6 @@ class UpdateToolContainer extends Component {
 
     componentWillMount() {
         let { id } = this.props.match.params
-        id = +id
         if(id) {
             const { tools } = this.props.tools
             const tool = this.getTool(id, tools)

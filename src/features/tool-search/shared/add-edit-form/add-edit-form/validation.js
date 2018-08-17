@@ -1,5 +1,5 @@
 export const nameValidation = (value) => {
-    if(value === undefined || value === null || value === '') {
+    if(!value) {
         return 'Name is required'
     } else {
         if(value.length < 3) {
@@ -15,7 +15,7 @@ export const nameValidation = (value) => {
 }
 
 export const toolTypeValidation = (value) => {
-    if(value === undefined || value === null || value === '') {
+    if(!value) {
         return 'Type tool is required'
     } else {
         return ''
@@ -23,7 +23,7 @@ export const toolTypeValidation = (value) => {
 }
 
 export const locationValidation = (value) => {
-    if(value === undefined || value === null || value === '') {
+    if(!value) {
         return 'Location is required'
     } else {
         return ''

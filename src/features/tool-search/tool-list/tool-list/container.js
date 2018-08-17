@@ -38,19 +38,17 @@ class ToolList extends Component {
         )
     }
 
-    handleUpdateTool = (event) => {
-        event.preventDefault()
-        const hasClass = event.target.classList.contains('tool_name')
+    handleUpdateTool = ({ target }) => {
+        const { classList, id } = target
+        const hasClass = classList.contains('tool_name')
         if(hasClass) {
-            const id = event.target.id
             const { history } = this.props
             history.push(`/${id}`)
         }
     }
 
 
-    handleAddTool = (event) => {
-        event.preventDefault()
+    handleAddTool = () => {
         const { history } = this.props
         history.push('/new')
     }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import { ElementNames } from '../../../../shared/constants'
 import AddUpdateFormComponent from './component'
 import { changeName, changeType, changeLocation, writeError } from './actions'
 import { nameValidation, toolTypeValidation, locationValidation } from './validation'
@@ -22,49 +23,40 @@ class AddUpdateFormContainer extends Component {
         this.validateField = this.validateField.bind(this)
     }
 
-    handleChangeName = (event) => {
-        event.preventDefault()
-        const newName = event.target.value
-        const fieldType = event.target.name
-        const { changeName } = this.props
-        changeName( newName )
-        this.validateField( fieldType, newName )
+    handleChangeName = ({ target }) => {
+        const { value, name } = target
+        this.props.changeName(value)
+        this.validateField( name, value )
     }
 
-    handleChangeType = (event) => {
-        event.preventDefault()
-        const newType = event.target.value
-        const fieldType = event.target.name
-        const { changeType } = this.props
-        changeType( newType )
-        this.validateField( fieldType, newType )
+    handleChangeType = ({ target }) => {
+        const { value, name } = target
+        this.props.changeType( value )
+        this.validateField( name, value )
     }
 
-    handleChangeLocation = (event) => {
-        event.preventDefault()
-        const newLocation = event.target.value
-        const fieldType = event.target.name
-        const { changeLocation } = this.props
-        changeLocation( newLocation )
-        this.validateField( fieldType, newLocation )
+    handleChangeLocation = ({ target }) => {
+        const { value, name } = target
+        this.props.changeLocation( value )
+        this.validateField( name, value )
     }
 
     validateField(typeField, value) {
         const { writeError } = this.props
         switch(typeField) {
-            case 'tool_name': {
+            case ElementNames.TOOL_NAME: {
                 const error = nameValidation(value)
-                writeError( 'tool_name', error)
+                writeError( ElementNames.TOOL_NAME, error)
                 break;
             }
-            case 'tool_type': {
+            case ElementNames.TOOL_TYPE: {
                 const error = toolTypeValidation(value)
-                writeError( 'tool_type', error)
+                writeError( ElementNames.TOOL_TYPE, error)
                 break;
             }
-            case 'tool_location': {
+            case ElementNames.TOOL_LOCATION: {
                 const error = locationValidation(value)
-                writeError( 'tool_location', error)
+                writeError( ElementNames.TOOL_LOCATION, error)
                 break;
             }
             default: {

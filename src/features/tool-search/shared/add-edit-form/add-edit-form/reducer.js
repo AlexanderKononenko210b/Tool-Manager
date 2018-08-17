@@ -1,4 +1,4 @@
-import { Actions } from '../../../../shared/constants'
+import { Actions, ElementNames } from '../../../../shared/constants'
 
 const initState = {
     name: '',
@@ -10,36 +10,50 @@ const initState = {
     formValid: false
 }
 
-const isFormValid = (name, toolType, location, isNameValid, isTypeLocationValid, isLocationValid ) => {
-    return name !== '' && toolType !== '' && location !== '' && isNameValid === '' && isTypeLocationValid === '' && isLocationValid === '';
+const isFormValid = ( state ) => {
+    return (state.name && state.typeTool && state.location && !state.nameError && !state.typeToolError && !state.locationError)
 }
 
 const formReducer = (state = initState, action) => {
     switch(action.type) {
         case Actions.CHANGE_NAME: {
-            return {...state, name: action.payload}
+            const formValid = isFormValid({ ...state, name: action.payload })
+            return {
+                ...state, 
+                name: action.payload,
+                formValid: formValid
+            }
         }
 
         case Actions.CHANGE_TYPE: {
-            return {...state, typeTool: action.payload}
+            const formValid = isFormValid({ ...state, typeTool: action.payload })
+            return {
+                ...state, 
+                typeTool: action.payload,
+                formValid: formValid
+            }
         }
 
         case Actions.CHANGE_LOCATION: {
-            return {...state, location: action.payload}
+            const formValid = isFormValid({ ...state, location: action.payload })
+            return {
+                ...state, 
+                location: action.payload,
+                formValid: formValid
+            }
         }
 
         case Actions.WRITE_ERROR: {
             switch(action.payload.typeField) {
-                case('tool_name'): {
-                    if(action.payload.errorMessage !== '') {
+                case(ElementNames.TOOL_NAME): {
+                    if(action.payload.errorMessage) {
                         return {
                             ...state,
                             nameError: action.payload.errorMessage,
                             formValid: false
                          }
                     } else {
-                        const formValid = isFormValid(state.name, state.typeTool, state.location, 
-                            action.payload.errorMessage, state.typeToolError, state.locationError )
+                        const formValid = isFormValid({ ...state, nameError: action.payload.errorMessage })
                         return {
                             ...state,
                             nameError: '',
@@ -47,16 +61,15 @@ const formReducer = (state = initState, action) => {
                         }
                     }
                 }
-                case('tool_type'): {
-                    if(action.payload.errorMessage !== '') {
+                case(ElementNames.TOOL_TYPE): {
+                    if(action.payload.errorMessage) {
                         return {
                             ...state,
                             toolTypeError: action.payload.errorMessage,
                             formValid: false
                          }
                     } else {
-                        const formValid = isFormValid(state.name, state.typeTool, state.location, 
-                            state.nameError, action.payload.errorMessage, state.locationError)
+                        const formValid = isFormValid({ ...state, typeToolError: action.payload.errorMessage })
                         return {
                             ...state,
                             toolTypeError: '',
@@ -64,16 +77,15 @@ const formReducer = (state = initState, action) => {
                         }
                     }
                 }
-                case('tool_location'): {
-                    if(action.payload.errorMessage !== '') {
+                case(ElementNames.TOOL_LOCATION): {
+                    if(action.payload.errorMessage) {
                         return {
                             ...state,
                             locationError: action.payload.errorMessage,
                             formValid: false
                          }
                     } else {
-                        const formValid = isFormValid(state.name, state.typeTool, state.location, 
-                            state.nameError, state.typeToolError, action.payload.errorMessage)
+                        const formValid = isFormValid({ ...state, locationError: action.payload.errorMessage })
                         return {
                             ...state,
                             locationError: '',
