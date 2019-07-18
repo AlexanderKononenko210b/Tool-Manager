@@ -1,0 +1,6 @@
+#table_list {
+    text-align: center;
+}
+#table_list th, #table_list tr {
+    text-align: inherit;
+}
